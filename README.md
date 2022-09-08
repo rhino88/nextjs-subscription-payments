@@ -2,10 +2,29 @@
 
 The all-in-one starter kit for high-performance SaaS applications.
 
-Fork to include:
-Common dependencies I use
-Typescript GraphQL
+Fork to include...
+
+**Dependencies:**
+tailwind forms
+tailwind line clamp
+headlessui-react
+react hot toast
+react hook form
+heroicons
+plausible
+
+**Implementation:**
+GraphQL on client/server
+GraphQL Codegen
 Better initial tailwind styling
+
+**Pages:**
+terms of service
+privacy policy
+
+**Environment Variables:**
+`NEXT_PUBLIC_SUPPORT_EMAIL` - used for support emails
+`NEXT_PUBLIC_APP_TITLE` - used for metadata and terms of service
 
 ## Features
 

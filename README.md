@@ -1,6 +1,11 @@
-# Next.js Subscription Payments Starter
+# Next.js Subscription Payments Starter - Improved
 
 The all-in-one starter kit for high-performance SaaS applications.
+
+Fork to include:
+Common dependencies I use
+Typescript GraphQL
+Better initial tailwind styling
 
 ## Features
 

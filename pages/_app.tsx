@@ -8,21 +8,25 @@ import { UserProvider } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
 import { AppProps } from 'next/app';
 import { MyUserContextProvider } from 'utils/useUser';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.body.classList?.remove('loading');
   }, []);
 
+  // @ts-ignore
+  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
+
   return (
-    <div className="bg-black">
+    <QueryClientProvider client={queryClient}>
       <UserProvider supabaseClient={supabaseClient}>
         <MyUserContextProvider supabaseClient={supabaseClient}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          {getLayout(<Component {...pageProps} />)}
         </MyUserContextProvider>
       </UserProvider>
-    </div>
+    </QueryClientProvider>
   );
 }

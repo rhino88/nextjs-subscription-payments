@@ -1,0 +1,21 @@
+generates:
+  # Client
+  ./components/hooks/generated-queries.ts:
+    schema: './schema.graphql'
+    documents: './**/!(*.d).{ts,tsx,graphql}'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher:
+        endpoint: 'process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT'
+        fetchParams:
+          headers:
+            Content-Type: 'application/json'
+  # Server
+  ./types/gql-server-resolvers.ts:
+    schema: './schema.graphql'
+    plugins:
+      - typescript
+      - typescript-resolvers

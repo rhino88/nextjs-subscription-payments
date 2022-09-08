@@ -25,6 +25,7 @@ privacy policy
 **Environment Variables:**
 `NEXT_PUBLIC_SUPPORT_EMAIL` - used for support emails
 `NEXT_PUBLIC_APP_TITLE` - used for metadata and terms of service
+`NEXT_PUBLIC_GRAPHQL_ENDPOINT` - endpoint for graphql
 
 ## Features
 
